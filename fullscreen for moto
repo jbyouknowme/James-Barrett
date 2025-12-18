@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Moto X3M Style</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+
+    #fullscreenBtn {
+      padding: 10px 16px;
+      background: #1e293b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 10px;
+      font-size: 14px;
+    }
+
+    #fullscreenBtn:hover {
+      background: #334155;
+    }
+
+    iframe {
+      width: 100%;
+      height: 85vh;
+      border: none;
+    }
+  </style>
+
+  <script>
+    function goFullscreen() {
+      const frame = document.getElementById("gameFrame");
+      if (frame.requestFullscreen) {
+        frame.requestFullscreen();
+      } else if (frame.webkitRequestFullscreen) {
+        frame.webkitRequestFullscreen();
+      }
+    }
+
+    if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+      document.body.innerHTML = "<h2>Computer only game.</h2>";
+    }
+  </script>
+</head>
+<body>
+
+<h2>Moto X3M – Bike Stunt Style</h2>
+
+<button id="fullscreenBtn" onclick="goFullscreen()">⛶ Fullscreen</button>
+
+<iframe
+  id="gameFrame"
+  src="https://itch.io/embed-upload/4080031?color=000000"
+  allowfullscreen>
+</iframe>
+
+<p>Controls: Arrow keys</p>
+
+</body>
+</html>
