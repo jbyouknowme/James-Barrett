@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GAME NAME</title>
+  <style>
+    body { 
+      margin:0; 
+      background:#111; 
+      color:white; 
+      font-family:Arial; 
+      text-align:center; 
+    }
+    canvas, iframe { display:block; margin:0 auto; }
+    #fullscreenBtn {
+      padding: 10px 16px;
+      margin: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #1e293b;
+      color: white;
+    }
+    #fullscreenBtn:hover { background:#334155; }
+  </style>
+</head>
+<body>
+
+<h2>GAME NAME</h2>
+<button id="fullscreenBtn" onclick="goFullscreen()">⛶ Fullscreen</button>
+
+<!-- If HTML5 iframe game, replace src with the game embed -->
+<iframe id="gameFrame" src="GAME_EMBED_URL" allowfullscreen width="800" height="600"></iframe>
+
+<p>Controls: Check game instructions</p>
+
+<script>
+function goFullscreen(){
+  const frame = document.getElementById("gameFrame");
+  if(frame.requestFullscreen) frame.requestFullscreen();
+  else if(frame.webkitRequestFullscreen) frame.webkitRequestFullscreen();
+}
+
+// Desktop-only enforcement
+if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)){
+  document.body.innerHTML = "<h2>Desktop only game.</h2>";
+}
+</script>
+
+</body>
+</html>
