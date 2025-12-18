@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submit Info</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #f4f4f4;
+      padding: 40px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 8px;
+      width: 80%;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Submit Your Info</h1>
+
+  <input id="name" placeholder="Your name">
+  <input id="message" placeholder="Your message">
+  <button onclick="saveData()">Submit</button>
+
+  <p id="status"></p>
+
+  <script>
+    function saveData() {
+      let name = document.getElementById("name").value;
+      let message = document.getElementById("message").value;
+
+      if (!name || !message) {
+        document.getElementById("status").innerText = "Fill everything out.";
+        return;
+      }
+
+      let data = JSON.parse(localStorage.getItem("submissions")) || [];
+      data.push({ name, message });
+      localStorage.setItem("submissions", JSON.stringify(data));
+
+      document.getElementById("status").innerText = "Submitted!";
+      document.getElementById("name").value = "";
+      document.getElementById("message").value = "";
+    }
+  </script>
+
+</body>
+</html>
