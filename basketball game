@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basket Bros Style</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+    iframe {
+      width: 100%;
+      height: 90vh;
+      border: none;
+    }
+  </style>
+
+  <script>
+    if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+      document.body.innerHTML = "<h2>Desktop only game.</h2>";
+    }
+  </script>
+</head>
+<body>
+
+<h2>Basket Bros – 1v1 Style</h2>
+
+<iframe src="https://itch.io/embed-upload/4217259?color=000000"></iframe>
+
+<p>Controls: WASD / Arrow Keys</p>
+
+</body>
+</html>
