@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modded Google Snake</title>
+  <style>
+    body { 
+      margin:0; 
+      background:#111; 
+      color:white; 
+      font-family:Arial; 
+      text-align:center; 
+    }
+    canvas { 
+      display:block; 
+      margin:0 auto; 
+      background:#222; 
+    }
+    #fullscreenBtn {
+      padding: 10px 16px;
+      margin: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #1e293b;
+      color: white;
+    }
+    #fullscreenBtn:hover { background:#334155; }
+  </style>
+</head>
+<body>
+
+<h2>Modded Google Snake</h2>
+<button id="fullscreenBtn" onclick="goFullscreen()">⛶ Fullscreen</button>
+<canvas id="gameCanvas" width="600" height="400"></canvas>
+<p>Controls: Arrow keys</p>
+
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+// Snake & game variables
+let snake = [{x:200, y:200}];
+let dir = {x:20, y:0};
+let food = {x: Math.floor(Math.random()*30)*20, y: Math.floor(Math.random()*20)*20};
+let score = 0;
+
+// Modded feature: speed increases as score goes up
+let speed = 200;
+
+document.addEventListener('keydown', e => {
+  if(e.key==='ArrowLeft' && dir.x===0){dir={x:-20,y:0}}
+  if(e.key==='ArrowRight' && dir.x===0){dir={x:20,y:0}}
+  if(e.key==='ArrowUp' && dir.y===0){dir={x:0,y:-20}}
+  if(e.key==='ArrowDown' && dir.y===0){dir={x:0,y:20}}
+});
+
+function update() {
+  let head = {x: snake[0].x + dir.x, y: snake[0].y + dir.y};
+
+  // Collisions with walls
+  if(head.x<0 || head.x>=canvas.width || head.y<0 || head.y>=canvas.height){
+    snake = [{x:200,y:200}]; score=0; dir={x:20,y:0}; speed=200;
+  }
+
+  // Self-collision
+  if(snake.some(s=>s.x===head.x && s.y===head.y)){ 
+    snake = [{x:200,y:200}]; score=0; dir={x:20,y:0}; speed=200;
+  }
+
+  snake.unshift(head);
+
+  // Eat food
+  if(head.x===food.x && head.y===food.y){
+    score++;
+    speed = Math.max(50, 200 - score*5); // Faster as score increases
+    food = {x: Math.floor(Math.random()*30)*20, y: Math.floor(Math.random()*20)*20};
+  } else { snake.pop(); }
+
+  draw();
+  setTimeout(update, speed);
+}
+
+function draw() {
+  ctx.fillStyle="#222"; ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="lime"; snake.forEach(s=>ctx.fillRect(s.x,s.y,20,20));
+  ctx.fillStyle="red"; ctx.fillRect(food.x,food.y,20,20);
+  ctx.fillStyle="white"; ctx.fillText("Score: "+score,10,20);
+}
+
+// Fullscreen
+function goFullscreen(){
+  if(canvas.requestFullscreen) canvas.requestFullscreen();
+  else if(canvas.webkitRequestFullscreen) canvas.webkitRequestFullscreen();
+}
+
+// Desktop-only check
+if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)){
+  document.body.innerHTML="<h2>Desktop only game.</h2>";
+}
+
+update();
+</script>
+
+</body>
+</html>
