@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #111;
+      color: white;
+      padding: 30px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Admin Login</h1>
+
+  <input id="password" type="password" placeholder="Admin password">
+  <button onclick="login()">Enter</button>
+
+  <div id="data"></div>
+
+  <script>
+    const ADMIN_PASSWORD = "CHANGE_THIS_PASSWORD";
+
+    function login() {
+      let pass = document.getElementById("password").value;
+      if (pass !== ADMIN_PASSWORD) {
+        alert("Wrong password");
+        return;
+      }
+
+      let data = JSON.parse(localStorage.getItem("submissions")) || [];
+      let output = "<h2>Submissions:</h2>";
+
+      data.forEach((item, i) => {
+        output += `<p><b>${i + 1}.</b> ${item.name}: ${item.message}</p>`;
+      });
+
+      document.getElementById("data").innerHTML = output;
+    }
+  </script>
+
+</body>
+</html>
