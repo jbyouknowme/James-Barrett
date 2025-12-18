@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unblocked Games Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #0b1220, #1a1f2e);
+      color: white;
+      text-align: center;
+    }
+    nav {
+      background: #020617;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 10px;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    .games { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; padding: 20px; }
+    .game {
+      background: #1e293b;
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .game:hover {
+      background: #334155;
+      transform: scale(1.08);
+      box-shadow: 0 0 15px #fff;
+    }
+    .game img { width: 100%; border-radius: 6px; }
+    footer { background:#020617; padding:15px; margin-top:20px; }
+    #searchInput {
+      margin:15px; padding:5px; width:200px; border-radius:5px; border:none; font-size:16px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="index.html">Refresh</a>
+</nav>
+
+<h2>Unblocked Games Hub</h2>
+<input type="text" id="searchInput" placeholder="Search games..." onkeyup="filterGames()">
+
+<!-- Action Games -->
+<h3 style="margin-left:20px;">Action Games</h3>
+<div class="games" id="actionGames">
+  <div class="game" onclick="location.href='moto.html'">
+    <img src="https://img.itch.zone/aW1nLzY4MTU2OTcucG5n/315x250%23c/5HnY5X.png">
+    <p>Moto X3M Style</p>
+  </div>
+  <div class="game" onclick="location.href='basket.html'">
+    <img src="https://img.itch.zone/aW1nLzY1NjM5ODgucG5n/315x250%23c/W9KJ0F.png">
+    <p>Basket Bros Style</p>
+  </div>
+</div>
+
+<!-- Arcade / Mini Games -->
+<h3 style="margin-left:20px;">Arcade / Mini Games</h3>
+<div class="games" id="miniGames">
+  <div class="game" onclick="location.href='retro_bowl.html'">
+    <img src="https://img.itch.zone/aW1nLzQ5NjE2MDUucG5n/315x250%23c/6VtMZ9.png">
+    <p>Retro Bowl – Mini</p>
+  </div>
+  <div class="game" onclick="location.href='slither.html'">
+    <img src="https://img.itch.zone/aW1nLzQ5MzQ2ODQucG5n/315x250%23c/F1jW6D.png">
+    <p>Slither.io – Mini</p>
+  </div>
+  <div class="game" onclick="location.href='modded_snake.html'">
+    <img src="https://img.icons8.com/ios-filled/150/00ff00/snake.png">
+    <p>Modded Snake</p>
+  </div>
+  <div class="game" onclick="location.href='platformer.html'">
+    <img src="https://img.itch.zone/aW1nLzQyNjQ2MjMucG5n/315x250%23c/J8gR7B.png">
+    <p>Platformer Mini</p>
+  </div>
+  <div class="game" onclick="location.href='slope.html'">
+    <img src="https://img.itch.zone/aW1nLzEwNzM2MTY2LnBuZw==/315x250%23c/6z%2FXdB.png">
+    <p>Slope Mini</p>
+  </div>
+</div>
+
+<footer>
+  <p>Unblocked Games Hub – Desktop only | &copy; 2025</p>
+</footer>
+
+<script>
+function filterGames(){
+  let input = document.getElementById('searchInput').value.toLowerCase();
+  let games = document.getElementsByClassName('game');
+  for(let i=0;i<games.length;i++){
+    let title = games[i].getElementsByTagName('p')[0].innerText.toLowerCase();
+    games[i].style.display = title.includes(input) ? '' : 'none';
+  }
+}
+
+// Desktop warning
+if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)){
+  alert("This site is desktop-only. Some games may not work on mobile.");
+}
+</script>
+
+</body>
+</html>
