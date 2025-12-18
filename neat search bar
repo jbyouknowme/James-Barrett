@@ -1,0 +1,14 @@
+<input type="text" id="searchInput" placeholder="Search games..." 
+style="margin:15px; padding:5px; width:200px; border-radius:5px;" 
+onkeyup="filterGames()">
+
+<script>
+function filterGames(){
+  let input = document.getElementById('searchInput').value.toLowerCase();
+  let games = document.getElementsByClassName('game');
+  for(let i=0;i<games.length;i++){
+    let title = games[i].getElementsByTagName('p')[0].innerText.toLowerCase();
+    games[i].style.display = title.includes(input) ? '' : 'none';
+  }
+}
+</script>
