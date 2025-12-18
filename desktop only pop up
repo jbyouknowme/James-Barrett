@@ -1,0 +1,5 @@
+<script>
+if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+  alert("This site is desktop-only. Some games may not work on mobile.");
+}
+</script>
