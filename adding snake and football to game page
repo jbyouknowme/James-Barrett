@@ -1,0 +1,9 @@
+<div class="game" onclick="location.href='retro_bowl.html'">
+  <img src="https://img.itch.zone/aW1nLzQ5NjE2MDUucG5n/315x250%23c/6VtMZ9.png">
+  <p>Retro Bowl – Mini</p>
+</div>
+
+<div class="game" onclick="location.href='slither.html'">
+  <img src="https://img.itch.zone/aW1nLzQ5MzQ2ODQucG5n/315x250%23c/F1jW6D.png">
+  <p>Slither.io – Mini</p>
+</div>
