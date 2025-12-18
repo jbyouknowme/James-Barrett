@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unblocked Games Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1220;
+      color: white;
+      text-align: center;
+    }
+    header {
+      padding: 15px;
+      font-size: 24px;
+      background: #020617;
+    }
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .game {
+      background: #1e293b;
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .game:hover {
+      background: #334155;
+      transform: scale(1.05);
+    }
+    .game img {
+      width: 100%;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<header>Unblocked Games Hub</header>
+
+<div class="games">
+  <div class="game" onclick="location.href='slope.html'">
+    <img src="https://img.itch.zone/aW1nLzEwNzM2MTY2LnBuZw==/315x250%23c/6z%2FXdB.png">
+    <p>Slope</p>
+  </div>
+
+  <div class="game" onclick="location.href='retro.html'">
+    <img src="https://img.itch.zone/aW1nLzQ5NjE2MDUucG5n/315x250%23c/6VtMZ9.png">
+    <p>Retro Bowl Style</p>
+  </div>
+
+  <div class="game" onclick="location.href='platformer.html'">
+    <img src="https://img.itch.zone/aW1nLzQyNjQ2MjMucG5n/315x250%23c/J8gR7B.png">
+    <p>Platformer</p>
+  </div>
+
+  <div class="game" onclick="location.href='moto.html'">
+    <img src="https://img.itch.zone/aW1nLzY4MTU2OTcucG5n/315x250%23c/5HnY5X.png">
+    <p>Moto X3M Style</p>
+  </div>
+
+  <div class="game" onclick="location.href='basket.html'">
+    <img src="https://img.itch.zone/aW1nLzY1NjM5ODgucG5n/315x250%23c/W9KJ0F.png">
+    <p>Basket Bros Style</p>
+  </div>
+
+  <div class="game" onclick="location.href='shooting.html'">
+    <img src="https://img.itch.zone/aW1nLzQ4NjY4NTgucG5n/315x250%23c/N4wK5Z.png">
+    <p>Shooting Game</p>
+  </div>
+
+  <div class="game" onclick="location.href='racing.html'">
+    <img src="https://img.itch.zone/aW1nLzQ5NzQ4NzMucG5n/315x250%23c/b2kLw3.png">
+    <p>Racing Game</p>
+  </div>
+
+  <div class="game" onclick="location.href='puzzle.html'">
+    <img src="https://img.itch.zone/aW1nLzQ4MzU3NjMucG5n/315x250%23c/iwvC0X.png">
+    <p>Puzzle Game</p>
+  </div>
+
+  <div class="game" onclick="location.href='run.html'">
+    <img src="https://img.itch.zone/aW1nLzQ5OTMxMzIucG5n/315x250%23c/4U96Yh.png">
+    <p>Running Game</p>
+  </div>
+
+  <div class="game" onclick="location.href='jump.html'">
+    <img src="https://img.itch.zone/aW1nLzQ4NjY4NTkucG5n/315x250%23c/jd3X0T.png">
+    <p>Jumping Game</p>
+  </div>
+</div>
+
+</body>
+</html>
