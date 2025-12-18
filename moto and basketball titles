@@ -1,0 +1,9 @@
+<div class="game" onclick="location.href='moto.html'">
+  <img src="https://img.itch.zone/aW1nLzY4MTU2OTcucG5n/315x250%23c/5HnY5X.png">
+  <p>Moto X3M (Style)</p>
+</div>
+
+<div class="game" onclick="location.href='basket.html'">
+  <img src="https://img.itch.zone/aW1nLzY1NjM5ODgucG5n/315x250%23c/W9KJ0F.png">
+  <p>Basket Bros (Style)</p>
+</div>
