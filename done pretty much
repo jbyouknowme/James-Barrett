@@ -1,0 +1,4 @@
+<div class="game" onclick="location.href='NEW_GAME.html'">
+  <img src="GAME_IMAGE_URL">
+  <p>New Game Name</p>
+</div>
